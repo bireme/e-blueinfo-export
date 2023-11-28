@@ -7,6 +7,7 @@ $eblueinfo_data = get_option('eblueinfo_data');
 
 $country_id   = '';
 $country_code = ( $_GET['country'] ) ? sanitize_text_field($_GET['country']) : '';
+$country_code = strtoupper($country_code);
 $collection   = ( $_GET['col'] ) ? sanitize_text_field($_GET['col']) : '';
 $format = ( $_GET['format'] && in_array($_GET['format'], array('xml', 'json')) ) ? $_GET['format'] : 'xml';
 $offset = ( !empty($_GET['offset']) ? $_GET['offset'] : 0 );
