@@ -34,7 +34,7 @@ if ( count($countries_list) > 0 && array_key_exists($country_code, $countries_li
 $docs_list = array();
 if ( !empty($country_id) ) {
     $community_ids = array();
-    $eblueinfo_service_request = EBLUEINFO_SERVICE_URL . '?country=' . $country_id . '&format=' . $format . '&lang=' . $lang;
+    $eblueinfo_service_request = EBLUEINFO_SERVICE_URL . '?country=' . $country_id . '&format=json&lang=' . $lang;
     $response = @file_get_contents($eblueinfo_service_request);
     if ($response){
         $response_json = json_decode($response);
@@ -119,24 +119,18 @@ if ( 'json' == $format ) {
     <downloads><?php echo $report['downloads']; ?></downloads>
     <documents>
         <?php foreach ( $report as $doc ) : ?>
-            <document>
-                <field name="title"><?php echo $doc['title']; ?></field>
-                <?php foreach ($doc['community'] as $com) : ?>
-                    <field name="community"><?php echo $com; ?></field>
-                <?php endforeach; ?>
-                <?php foreach ($doc['collection'] as $col) : ?>
-                    <field name="collection"><?php echo $col; ?></field>
-                <?php endforeach; ?>
-                <field name="downloads"><?php echo $doc['downloads']; ?></field>
-            </document>
+        <document>
+            <field name="title"><?php echo $doc['title']; ?></field>
+            <?php foreach ($doc['community'] as $com) : ?>
+            <field name="community"><?php echo $com; ?></field>
+            <?php endforeach; ?>
+            <?php foreach ($doc['collection'] as $col) : ?>
+            <field name="collection"><?php echo $col; ?></field>
+            <?php endforeach; ?>
+            <field name="downloads"><?php echo $doc['downloads']; ?></field>
+        </document>
         <?php endforeach; ?>
     </documents>
 </data>
-
-<?php
-    rss_enclosure();
-    do_action('rss2_item');
-    wp_reset_postdata();
-?>
 
 <?php } ?>
