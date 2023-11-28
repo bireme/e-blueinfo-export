@@ -23,7 +23,7 @@ if ( !empty($country_code) && 'US' != $country_code ) {
     if ($response){
         $response_json = json_decode($response);
         // echo "<pre>"; print_r($response_json); echo "</pre>"; die();
-        $countries_list = wp_list_pluck( $response_json, 'code', 'id' );
+        $countries_list = wp_list_pluck( $response_json, 'id', 'code' );
     }
 }
 
