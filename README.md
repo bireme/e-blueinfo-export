@@ -90,6 +90,8 @@ http://<domain>/?feed=report&country=BR&offset=0&count=10format=xml
 }
 ```
 
+## Country Codes 2-digit & 3-digit
+
 Country | 2-digit code | 3-digit code | Numeric
 -- | -- | -- | --
 Afghanistan | AF | AFG | 004
