@@ -54,7 +54,7 @@ if ( !empty($country_id) ) {
             $expr[] = '(com:' . $com_id . '|*)';
         }
 
-        $query = implode(' OR ', $expr)
+        $query = implode(' OR ', $expr);
     }
 
     if ( !empty($query) ) {
