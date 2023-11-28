@@ -26,7 +26,15 @@ function eblueinfo_export_activate(){
     // require e-BlueInfo plugin
     if ( ! is_plugin_active( 'e-blueinfo/e-blueinfo.php' ) and current_user_can( 'activate_plugins' ) ) {
         // stop activation redirect and show error
-        wp_die( __('Sorry, but this plugin requires the e-BlueInfo Plugin to be installed and active.'), __('Error'), array( 'back_link' => true ) );
+        wp_die(
+            __('Sorry, but this plugin requires the e-BlueInfo Plugin to be installed and active.'),
+            __('Error'),
+            array(
+                'back_link' => true,
+                'link_url'  => 'https://github.com/bireme/e-blueinfo-export',
+                'link_text' => 'e-BlueInfo Plugin',
+            )
+        );
     }
 }
 
