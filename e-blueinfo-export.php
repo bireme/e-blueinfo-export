@@ -12,7 +12,7 @@ define( 'EBLUEINFO_EXPORT_URL', plugin_dir_url(__FILE__) );
 defined( 'PDF_SERVICE_URL' ) or define( 'PDF_SERVICE_URL', 'http://diamante15.bireme.br:9293/solr/pdfs/select/' );
 defined( 'EBLUEINFO_SERVICE_URL' ) or define( 'EBLUEINFO_SERVICE_URL', 'https://fi-admin-api.bvsalud.org/api/community/' );
 
-require_once(STATS_EXPORT_DIR . 'functions.php');
+require_once(EBLUEINFO_EXPORT_DIR . 'functions.php');
 
 if ( !function_exists( 'do_feed_report' ) ) {
     function do_feed_report() {
