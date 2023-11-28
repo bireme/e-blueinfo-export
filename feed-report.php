@@ -95,8 +95,8 @@ if ( count($docs_list) > 0 ) {
         $docs[] = $_doc;
     }
 
-    usort($docs, "intcmp");
-    $docs = array_reverse($docs);
+    // usort($docs, "intcmp");
+    // $docs = array_reverse($docs);
 
     $report['total']     = $total;
     $report['downloads'] = $downloads;
