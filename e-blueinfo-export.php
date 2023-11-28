@@ -19,7 +19,7 @@ if ( !function_exists( 'do_feed_report' ) ) {
         load_template( EBLUEINFO_EXPORT_DIR . 'feed-report.php' );
     }
 }
-add_action( 'do_feed_stats', 'do_feed_stats', 10, 1 );
+add_action( 'do_feed_report', 'do_feed_report', 10, 1 );
 
 register_activation_hook( __FILE__, 'eblueinfo_export_activate' );
 function eblueinfo_export_activate(){
