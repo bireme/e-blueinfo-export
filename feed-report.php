@@ -120,12 +120,12 @@ if ( 'json' == $format ) {
     <documents>
         <?php foreach ( $report as $doc ) : ?>
         <document>
-            <field name="title"><?php echo $doc['title']; ?></field>
+            <field name="title"><![CDATA[<?php echo $doc['title']; ?>]]></field>
             <?php foreach ($doc['community'] as $com) : ?>
-            <field name="community"><?php echo $com; ?></field>
+            <field name="community"><![CDATA[<?php echo $com; ?>]]></field>
             <?php endforeach; ?>
             <?php foreach ($doc['collection'] as $col) : ?>
-            <field name="collection"><?php echo $col; ?></field>
+            <field name="collection"><![CDATA[<?php echo $col; ?>]]></field>
             <?php endforeach; ?>
             <field name="downloads"><?php echo $doc['downloads']; ?></field>
         </document>
