@@ -118,7 +118,7 @@ if ( 'json' == $format ) {
     <total><?php echo $report['total']; ?></total>
     <downloads><?php echo $report['downloads']; ?></downloads>
     <documents>
-        <?php foreach ( $report as $doc ) : ?>
+        <?php foreach ( $report['documents'] as $doc ) : ?>
         <document>
             <field name="title"><![CDATA[<?php echo $doc['title']; ?>]]></field>
             <?php foreach ($doc['community'] as $com) : ?>
