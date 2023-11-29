@@ -111,4 +111,13 @@ if ( !function_exists('get_parent_name') ) {
     }
 }
 
+if ( !function_exists('array_iunique') ) {
+    function array_iunique( $array ) {
+        return array_intersect_key(
+            $array,
+            array_unique( array_map( "strtolower", $array ) )
+        );
+    }
+}
+
 ?>
