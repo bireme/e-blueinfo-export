@@ -4,6 +4,7 @@ Plugin Name: e-BlueInfo Export
 Plugin URI: https://github.com/bireme/e-blueinfo-export
 Description: This plugin displays the e-BlueInfo content downloads in output format (XML and JSON).
 Author: BIREME/PAHO/WHO
+Author URI: http://reddes.bvsalud.org
 Version: 1.0
 */
 
