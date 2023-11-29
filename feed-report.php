@@ -17,7 +17,7 @@ $total  = 0;
 $downloads = 0;
 
 $countries_list = array();
-if ( !empty($country_code) && 'US' != $country_code ) {
+if ( !empty($country_code) ) {
     $country_service_request = EBLUEINFO_SERVICE_URL . 'get_country_list/?format=json';
     $response = @file_get_contents($country_service_request);
     if ($response){
