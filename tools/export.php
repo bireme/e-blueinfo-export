@@ -43,21 +43,23 @@ if ($argc > 1) {
                     if ( count($docs) > 1 ) {
                         $headers = array(
                             'TITLE',
+                            'COUNTRY',
                             'COMMUNITY',
                             'COLLECTION',
                             'DOWNLOADS'
                         );
 
                         if ( $offset == 0 ) {
-                            $fp = fopen('export.csv', 'w');
+                            $fp = fopen('export-'.$country_code.'.csv', 'w');
                             fputcsv($fp, $headers);
                         }
 
                         foreach ($docs as $doc) {
                             $fields = array(
                                 $doc['title'],
-                                implode('; ', $doc['community']),
-                                implode('; ', $doc['collection']),
+                                $country_code,
+                                implode(';', $doc['community']),
+                                implode(';', $doc['collection']),
                                 $doc['downloads']
                             );
 
@@ -75,7 +77,7 @@ if ($argc > 1) {
             // $time = date("H:i:s",$time_end-$time_start);
             $time = date("H\hi\ms\s",$time_end-$time_start);
 
-            echo "\nFilename: export.csv\n";
+            echo "\nFilename: export-$country_code.csv\n";
             echo "Execution time: $time\n\n";
         }
     }
