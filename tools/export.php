@@ -51,19 +51,19 @@ if ($argc > 1) {
 
                         if ( $offset == 0 ) {
                             $fp = fopen('export-'.$country_code.'.csv', 'w');
-                            fputcsv($fp, $headers);
+                            fputcsv($fp, $headers, ';');
                         }
 
                         foreach ($docs as $doc) {
                             $fields = array(
                                 $doc['title'],
                                 $country_code,
-                                implode(';', $doc['community']),
-                                implode(';', $doc['collection']),
+                                implode('|', $doc['community']),
+                                implode('|', $doc['collection']),
                                 $doc['downloads']
                             );
 
-                            fputcsv($fp, $fields);
+                            fputcsv($fp, $fields, ';');
                         }
 
                         // fclose($fp);
