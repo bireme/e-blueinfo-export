@@ -12,10 +12,11 @@ You can also use the following parameters and filters:
 * `offset`- Display content offset (default: 0)
 * `count`- Display content limit (default: 10)
 * `format`- Output format. Possible values are __xml__ and __json__ (default: json)
+* `lang`- Display content language (default: en)
 
 ## Usage example
 ```
-http://<domain>/?feed=report&country=BR&offset=0&count=10format=xml
+http://<domain>/?feed=report&country=BR&offset=0&count=10format=xml&lang=pt
 ```
 
 ## NOTES
