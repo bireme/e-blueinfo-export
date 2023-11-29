@@ -81,14 +81,14 @@ if ( count($docs_list) > 0 ) {
             $com_name = get_parent_name($com, $lang);
             $_doc['community'][] = $com_name;
         }
-        $_doc['community'] = array_iunique($_doc['community']);
+        $_doc['community'] = array_values(array_iunique($_doc['community']));
 
         $_doc['collection'] = array();
         foreach ($doc->col as $col) {
             $col_name = get_parent_name($col, $lang);
             $_doc['collection'][] = $col_name;
         }
-        $_doc['collection'] = array_iunique($_doc['collection']);
+        $_doc['collection'] = array_values(array_iunique($_doc['collection']));
 
         $_doc['downloads'] = ( $eblueinfo_data[$doc->id] ) ? $eblueinfo_data[$doc->id] : 0;
         $downloads = $downloads + $_doc['downloads'];
