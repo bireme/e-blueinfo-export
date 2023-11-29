@@ -8,11 +8,10 @@ $eblueinfo_data = get_option('eblueinfo_data');
 $country_id   = '';
 $country_code = ( $_GET['country'] ) ? sanitize_text_field($_GET['country']) : '';
 $country_code = strtoupper($country_code);
-$collection   = ( $_GET['col'] ) ? sanitize_text_field($_GET['col']) : '';
 $format = ( $_GET['format'] && in_array($_GET['format'], array('xml', 'json')) ) ? $_GET['format'] : 'json';
-$offset = ( !empty($_GET['offset']) ? $_GET['offset'] : 0 );
-$count  = ( !empty($_GET['count']) ? $_GET['count'] : 10 );
-$lang   = ( !empty($_GET['lang']) ? $_GET['lang'] : 'en' );
+$offset = ( !empty($_GET['offset']) ? intval($_GET['offset']) : 0 );
+$count  = ( !empty($_GET['count']) ? intval($_GET['count']) : 10 );
+$lang   = ( !empty($_GET['lang']) ? sanitize_text_field($_GET['lang']) : 'en' );
 $total  = 0;
 $downloads = 0;
 
