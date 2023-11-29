@@ -79,6 +79,9 @@ if ($argc > 1) {
             echo "Execution time: $time\n\n";
         }
     }
+} else {
+    echo "\nUsage: php export.php --country=<country_code> [--count=<integer>] [--lang=<language_code>]\n";
+    echo "\nExample: php export.php --country=PE --count=100 --lang=es\n\n";
 }
 
 ?> 
