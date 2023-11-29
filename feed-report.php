@@ -58,7 +58,7 @@ if ( !empty($country_id) ) {
     }
 
     if ( !empty($query) ) {
-        $pdf_service_request = PDF_SERVICE_URL . '?fl=id,ti,com,col,is&q=' . urlencode($query) . '&start=' . $offset . '&rows=' . $count . '&lang=' . $lang;
+        $pdf_service_request = PDF_SERVICE_URL . '?fl=id,ti,com,col,is,at,an&q=' . urlencode($query) . '&start=' . $offset . '&rows=' . $count . '&lang=' . $lang;
         $response = @file_get_contents($pdf_service_request);
         if ($response){
             $response_json = json_decode($response);
